@@ -1,0 +1,52 @@
+<div class="splitcontentleft">
+  <% if @mbo.users.any? %>
+    <table class="list users">
+      <thead><tr>
+          <th><%= l(:label_user) %></th>
+          <th style="width:15%"></th>
+        </tr></thead>
+      <tbody>
+        <% @mbo.users.sort.each do |user| %>
+          <tr id="user-<%= user.id %>" class="<%= cycle 'odd', 'even' %>">
+            <td class="user"><%= user %></td>
+            <% if @teams != nil and @teams.length != 0 %>
+              <td class="buttons">
+                <%= link_to_remote l(:button_delete), { :url => { :controller => 'mbo', :action => 'remove_user', :id => @mbo, :user_id => user },
+                  :method => :post },
+                  :class => 'icon icon-del' %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% end %>
+</div>
+<% if @teams != nil and @teams.length != 0 %>
+  <div class="splitcontentright">
+    <% users = User.active.find(:all, :limit => 100) - @mbo.users %>
+    <% if users.any? %>
+      <% remote_form_for(:mbo, @mbo, :url => {:controller => 'mbo', :action => 'add_users', :id => @mbo}, :method => :post) do |f| %>
+        <fieldset><legend><%=l(:label_user_new)%></legend>
+
+          <p><%= label_tag "user_search", l(:label_user_search) %><%= text_field_tag 'user_search', nil %></p>
+          <%= observe_field(:user_search,
+            :frequency => 0.5,
+            :update => :users,
+            :url => { :controller => 'mbo', :action => 'autocomplete_for_user', :id => @mbo },
+            :with => 'q')
+        %>
+
+          <div id="users">
+            <%= principals_check_box_tags 'user_ids[]', users %>
+          </div>
+
+          <p><%= submit_tag l(:button_add) %></p>
+        </fieldset>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>

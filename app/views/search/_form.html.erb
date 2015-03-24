@@ -1,0 +1,6 @@
+<%= error_messages_for 'search' %>
+<div class="search">
+  <p><%= f.text_field :create_at_start, :size => 20,:disabled =>true , :required => true%><%= calendar_for('search_create_at_start') %></p>
+  <p><%= f.text_field :create_at_end, :size => 20,:disabled =>true , :required => true%><%= calendar_for('search_create_at_end') %></p>
+</div>
+

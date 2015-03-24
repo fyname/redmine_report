@@ -1,0 +1,7 @@
+<h2><%= l(:report_title_create_daily) %></h2>
+<% labelled_tabular_form_for :projdailytask, @projdailytask,
+  :url => { :action => "update",:id => @projdailytask.id },
+  :html => { :class => nil, :multipart => true, :id => "projdailytask-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= link_to l(:report_link_daily_back) ,:controller=>'report',:action => 'projindex' %>
+<% end %>

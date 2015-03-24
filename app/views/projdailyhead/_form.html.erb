@@ -1,0 +1,8 @@
+<%= error_messages_for 'projdailyhead' %>
+<div class="box tabular">
+<%#= select_project %>
+  <p><%= f.select :pd_name, User.current.projects.all.collect{|c|[ c.name, c.id.to_s+"|"+c.name.to_s ]}.unshift(["请选择项目", 0]), :required => true%></p>
+  <p><%= f.select :pd_isdelay, (['正常','提前','延迟','严重延迟'].collect {|r| ["#{r}"] }), :required => true%></p>
+  <p><%= f.text_area :pd_help, :cols => 100, :rows => 5 %></p>
+  <p><%= f.text_area :pd_risk, :cols => 100, :rows => 5 %></p>
+</div>

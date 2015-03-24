@@ -1,0 +1,8 @@
+<%= error_messages_for 'userdaily' %>
+<div class="box tabular">
+  <p><%= f.text_field :create_weekly, :size => 30,:disabled =>false , :required => true%><%= calendar_for('userdaily_create_weekly') %></p>
+  <p><%= f.text_area :ud_work, :cols => 100, :rows => 10, :required => true ,:label => l(:report_label_ud_work) %></p>
+  <p><%= f.text_area :ud_probles, :cols => 100, :rows => 10, :label => l(:report_label_ud_probles) %></p>
+  <p><%= f.text_area :ud_plan, :cols => 100, :rows => 10, :required => true, :label => l(:report_label_ud_plan) %></p>
+  <p><%= f.text_area :ud_proposal, :cols => 100, :rows => 10, :label => l(:report_label_ud_proposal) %></p>
+</div>

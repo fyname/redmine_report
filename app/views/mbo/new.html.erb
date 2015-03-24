@@ -1,0 +1,7 @@
+<h2><%= l(:title_create_mbo) %></h2>
+<% labelled_tabular_form_for :mbo, @mbo,
+  :url => { :action => "create"},
+  :html => { :class => nil, :multipart => true, :id => "mbo-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:button_mbo_create) %>
+<% end %>

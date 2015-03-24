@@ -1,0 +1,5 @@
+<h2><%= l(:report_title_create_daily) %></h2>
+<% labelled_tabular_form_for :projdailyschedule, @projdailyschedule, :url => { :action => "create" }, :html => { :class => nil, :multipart => true, :id => "projdailyschedule-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:report_button_projschedule_create) %>
+<% end %>

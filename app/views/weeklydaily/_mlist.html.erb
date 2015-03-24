@@ -1,0 +1,101 @@
+<table>
+
+  <% if @weeklydailes !=nil %>
+    <tr>
+      <th>部门</th>
+      <th>提交人</th>
+      <th>提交时间</th>
+      <th>本周工作内容</th>
+      <th>困难帮助</th>
+      <th>下周计划</th>
+      <th>建议</th>
+      <th>操作</th>
+    </tr>
+    <% @weeklydailes.each do |weeklydaily| %>
+      <div id="weeklydaily">
+        <% if DateTime.parse(weeklydaily.created_at.to_s).strftime('%W') == Time.now.strftime('%W') %>
+
+          <tr>
+            <td class ="d_dept">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_deptname, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_name">
+              <div class="wiki">
+                <%= textilizable weeklydaily.user_name, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_weekly">
+              <div class="wiki">
+                <%= textilizable weeklydaily.create_weekly, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_work">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_work, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_probles">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_probles, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_plan">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_plan, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_proposal">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_proposal, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'weeklydaily', :action => 'show', :id => weeklydaily.id } %> </td>
+          </tr>
+
+        <% else %>
+
+          <tr>
+            <td class ="d_dept">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_deptname, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_name">
+              <div class="wiki">
+                <%= textilizable weeklydaily.user_name, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_weekly">
+              <div class="wiki">
+                <%= textilizable weeklydaily.create_weekly, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_work">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_work, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_probles">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_probles, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_plan">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_plan, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_proposal">
+              <div class="wiki">
+                <%= textilizable weeklydaily.wd_proposal, :object => @weeklydailes %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'weeklydaily', :action => 'show', :id => weeklydaily.id } %></td>
+          </tr>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</table>

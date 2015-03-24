@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag 'report', :plugin => 'redmine_reports' %>
+
+<h2><%=l(:mbo_list)%></h2>
+<% if @mbos == nil or @mbos.length == 0 %>
+  <div class ="nodata"><%=l(:message_no_mbos)%></div>
+<% else %>
+  <div id="list-zb" class="">
+    <%= render :partial => 'mbo/ownerlist'%>
+  </div>
+
+<% end %>
+
+<h2><%=l(:report_label_user_dailyreport)%></h2>
+
+<% if @userdailes.length == 0 %>
+  <p>
+    <%= link_to l(:report_title_create_daily) ,:controller=>'userdaily',:action => 'create' %>|
+    <%= link_to l(:report_link_back) ,:controller=>'userdaily',:action => 'index' %>
+  </p>
+  <div class ="nodata"><%=l(:report_message_no_userdailes)%></div>
+<% else %>
+  <p>
+    <%= link_to l(:report_title_create_daily) ,:controller=>'userdaily',:action => 'create' %>|
+    <%= link_to l(:report_link_back) ,:controller=>'userdaily',:action => 'index' %>
+  </p>
+  
+  <%= l(:report_field_tag_user_daily_list) %>
+  <div id="list-zb" class="">
+    <%= render :partial => 'userdaily/list'%>
+  </div>
+<% end %>
+
+
+<h2><%=l(:report_label_user_weeklyreport)%></h2>
+
+<% if @weeklydailes ==nil or @weeklydailes.length == 0 %>
+  <p>
+    <%= link_to l(:report_title_create_weekly) ,:controller=>'weeklydaily',:action => 'new' %>|
+    <%= link_to l(:report_link_back) ,:controller=>'weeklydaily',:action => 'index' %>
+  </p>
+
+  <div class ="nodata"><%=l(:report_message_no_weeklydailes)%></div>
+<% else %>
+  <p>
+    <%= link_to l(:report_title_create_weekly) ,:controller=>'weeklydaily',:action => 'new' %>|
+    <%= link_to l(:report_link_back) ,:controller=>'weeklydaily',:action => 'index' %>
+  </p>
+
+  <%= l(:report_field_tag_user_weekly_list) %>
+  <div id="list-zb" class="">
+    <%= render :partial => 'weeklydaily/list'%>
+  </div>
+<% end %>
+
+<% html_title(l(:report_label_daily_weeklyreport)) -%>
+

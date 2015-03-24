@@ -1,0 +1,7 @@
+<%= error_messages_for 'weeklydaily' %>
+<div class="box tabular">
+  <p><%= f.text_area :wd_work, :cols => 80, :rows => 10, :required => true , :label => l(:report_label_uw_work) %></p>
+  <p><%= f.text_area :wd_probles, :cols => 80, :rows => 10, :label => l(:report_label_uw_probles) %></p>
+  <p><%= f.text_area :wd_plan, :cols => 80, :rows => 10,:required => true , :label => l(:report_label_uw_plan) %></p>
+  <p><%= f.text_area :wd_proposal, :cols => 80, :rows => 10, :label => l(:report_label_uw_proposal) %></p>
+</div>

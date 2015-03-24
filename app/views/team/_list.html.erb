@@ -1,0 +1,32 @@
+<table>
+  <% if @teams.length !=0 %>
+    <tr>
+      <th>部门名称</th>
+      <th>备注</th>
+      <th>主管编码</th>
+    </tr>
+    <% @teams.each do |team| %>
+      <div id="organization">
+          <tr>
+            <td class ="name">
+              <div class="wiki">
+                <%= textilizable team.name, :object => team %>
+              </div>
+            </td>
+            <td class ="address">
+              <div class="wiki">
+                <%= textilizable team.remark, :object => team %>
+              </div>
+            </td>
+            <td class ="competendid">
+              <div class="wiki">
+                <%= textilizable team.users.firstname, :object => team %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'team', :action => 'show', :id => team.id } %> | <%= link_to"编辑",{ :controller => 'team',:action => 'edit', :id => team.id } %></td>
+          </tr>
+      </div>
+
+    <% end %>
+  <% end %>
+</table>

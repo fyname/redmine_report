@@ -1,0 +1,7 @@
+<h2><%= l(:report_title_create_team) %></h2>
+<% labelled_tabular_form_for :team, @team,
+  :url => { :action => "create"},
+  :html => { :class => nil, :multipart => true, :id => "team-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:report_button_team_create) %>
+<% end %>

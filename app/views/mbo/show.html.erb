@@ -1,0 +1,7 @@
+<h2><%= l(:title_create_mbos) %></h2>
+<% labelled_tabular_form_for :mbo, @mbo,
+  :url => { :action => "show" },
+  :html => { :class => nil, :multipart => true, :id => "mbo-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= link_to l(:link_mbo_back) ,:controller=>'mbo',:action => 'index' %>
+<% end %>

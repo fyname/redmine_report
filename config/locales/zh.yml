@@ -1,0 +1,121 @@
+# English strings go here for Rails i18n
+zh:
+  report_user_title: "个人报告"
+  report_project_title: "项目报告"
+  report_manager_title: "团队协作"
+  report_label_user_dailyreport: "我的个人日报"
+  report_label_user_weeklyreport: "我的个人周报"
+  report_label_daily_weeklyreport: "个人日报周报"
+  report_label_my_projreport: "我的项目报告"
+  report_field_tag_user_daily_list: "个人日报列表"
+  report_field_tag_user_weekly_list: "个人周报列表"
+
+  report_label_user_mdailyreport: "个人日报"
+  report_label_user_weeklyreport: "个人周报"
+  report_label_proj_mdailyreport: "项目阶段报告"
+  report_label_proj_mweeklyreport: "项目周报"
+  report_label_proj_sweeklyreport: "项目周报"
+
+  report_label_ud_work: "今天工作内容"
+  report_label_ud_probles: "今天需要协助"
+  report_label_ud_plan: "明天计划"
+  report_label_ud_proposal: "今天工作建议"
+
+  report_label_uw_work: "本周工作内容"
+  report_label_uw_probles: "本周需要协助"
+  report_label_uw_plan: "下周计划"
+  report_label_uw_proposal: "本周工作建议"
+
+  report_title_create_daily: "生成日报"
+  report_title_create_weekly: "创建周报"
+  report_title_edit_daily: "编辑日报"
+
+
+  report_button_daily_create: "提交日报"
+  report_button_weekly_create: "提交周报"
+  report_button_edit: "提交修改"
+  report_link_daily_back: "返回列表"
+  field_d_work: "工作内容"
+  field_d_plan: "明天计划"
+
+  report_field_tag_pro_daily_list: "项目阶段报告列表"
+  report_field_tag_pro_weekly_list: "项目周报列表"
+
+  report_field_tag_pro_total_list: "周报汇总列表"
+
+  report_title_create_project: "创建项目阶段报告"
+  report_title_create_project_task: "创建项目任务"
+  field_pd_name: "项目名称"
+  field_pd_isdelay: "是否延期"
+  field_pd_help: "需要帮助"
+  field_pd_risk: "建议"
+  field_pd_totalproportion: "项目总体进度"
+
+  field_pd_module: "任务名称"
+  field_pd_isnew: "是否新增功能点"
+  field_pd_start: "功能点开始时间"
+  field_pd_commitment: "功能点成员承诺时间"
+  field_pd_actual: "功能点时间完成时间"
+  field_pd_delaycause: "延迟原因"
+  field_pd_phase: "所处项目阶段"
+  field_pd_username: "任务所有者"
+  field_pd_version: "所处项目版本"
+  field_pd_proportion: "功能点完成比例"
+  field_pd_iscomplete: "是否完成"
+
+  report_message_no_userdailes: "目前尚未有任何个人日报"
+  report_message_no_weeklydailes: "目前尚未有任何个人周报"
+  report_message_no_prodailes: "目前尚未有任何项目日报"
+  report_message_no_proweekly: "目前尚未有任何周报"
+
+
+  report_title_create_project_schedule: "创建项目版本对应问题"
+  field_pd_bugs: "项目名称"
+  report_button_projschedule_create: "生成版本对应问题"
+
+  field_u_replycontent: "回复内容"
+
+  field_deptname: "选择部门"
+  report_label_user_deptname: "更新所在部门"
+
+  field_create_weekly: "提交日报时间"
+
+
+# 部门
+  report_label_user_team: "团队信息"
+  report_title_create_team: "创建团队"
+  report_field_tag_team_list: "团队列表"
+  field_name: "团队名称"
+  field_team: "团队"
+  field_remark: "团队备注"
+  field_competendid: "选择团队主管"
+  report_title_create_team: "创建团队"
+  report_button_team_create: "创建团队"
+  report_message_no_teams: "没有任何团队数据！"
+  report_link_team_back: "返回团队列表"
+  report_mbo_title: "团队目标"
+
+# 目标
+  field_ownerid: "目标所有者"
+  field_starttime: "开始时间"
+  field_endtime: "结束时间"
+  field_iscomplete: "是否完成"
+  button_mbo_create: "创建目标"
+  title_create_mbo: "创建目标"
+  mbo_list: "目标列表"
+  title_create_mbos: "目标详情"
+  link_mbo_back: "返回目标列表"
+  button_edit_mbo: "保存目标"
+  create_mbo: "创建目标"
+  message_no_mbos: "尚没有任何目标"
+  create_mbo: "创建目标"
+  field_mbo: "目标"
+  label_mbo_owner: "目标所有者"
+
+
+  #search
+  label_s_start: "开始时间"
+  label_s_end: "结束时间"
+  date_search: "查询"
+  report_link_back: "查看历史"
+  look_mbo: "查看历史目标"

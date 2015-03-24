@@ -1,0 +1,6 @@
+<% labelled_tabular_form_for :team, @team,
+  :url => { :action => "update",:id => @team.id },
+  :html => {:method => :put} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<%= submit_tag l(:button_save) %><%= link_to l(:report_link_team_back) ,:controller=>'team',:action => 'index' %>
+<% end %>

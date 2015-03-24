@@ -1,0 +1,80 @@
+/* 
+    Document   : report
+    Created on : 2012-8-7, 12:13:04
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+table
+{
+    border:1px solid #020EBA;
+    /*word-break:break-all;word-wrap:break-word;*/
+    width:1300px;
+}
+
+th
+{
+    height:20px;
+    background-color:#2a5a8a;
+    border:1px solid #020EBA;
+    color: #FFFFFF;
+}
+
+td
+{
+    border:1px solid #020EBA;
+}
+
+.d_dept
+{
+   width:80px;
+}
+.d_name
+{
+    width:80px;
+}
+.d_weekly
+{
+    width:200px;
+}
+.d_work
+{
+    width:600px;
+}
+.d_probles
+{
+    width:300px;
+}
+.d_plan
+{
+    width:300px;
+}
+.d_proposal
+{
+    width:200px;
+}
+
+.d_zc
+{
+    width:90px;
+}
+
+.pd_username
+{
+    width:200px;
+}
+.pd_date
+{
+    width:150px;
+}
+
+.search_daily_center{ float:left; width:200px;}
+.search_weekly_center{ float:left; width:200px;}
+.search_t{float:left; width:500px;}

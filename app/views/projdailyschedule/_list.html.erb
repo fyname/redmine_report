@@ -1,0 +1,3 @@
+<% if User.current.allowed_to?(:view_gantt, @project, :global => true) %>
+   | <%= link_to(l(:label_gantt), :controller => 'gantts', :action => 'show', :project_id => @project) %>
+<% end %>

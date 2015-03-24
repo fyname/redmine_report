@@ -1,0 +1,21 @@
+<%= error_messages_for 'projdailytask' %>
+<div class="box tabular">
+  <p><%= f.text_area :pd_module, :cols => 100, :rows => 5, :required => true %></p>
+  <p><%= f.select :pd_isnew, (['否','是'].collect {|r| ["#{r}"] }), :required => true%></p>
+  <p><%= f.text_area :pd_username,  :cols => 100, :rows => 5 , :required => true%></p>
+  <p><%= f.text_field :pd_start, :size => 10,:disabled =>true , :required => true%><%= calendar_for('projdailytask_pd_start') %></p>
+  <p><%= f.text_field :pd_commitment,  :size => 10,:disabled =>true , :required => true %><%= calendar_for('projdailytask_pd_commitment') %></p>
+  <p><%= f.text_field :pd_actual, :size => 10 ,:disabled =>true %><%= calendar_for('projdailytask_pd_actual') %></p>
+    <p><%= f.text_area :pd_delaycause, :cols => 100, :rows => 5 %></p>
+  <p><%= f.select :pd_phase, (['需求','设计','开发','测试','实施'].collect {|r| ["#{r}"] }), :required => true%></p>
+  <p><%= f.select :pd_version, (@versions.collect {|v| [v.name, v.name]}.unshift(["请选择项目版本", 0])), :required => true %>
+    <%= prompt_to_remote(image_tag('add.png', :style => 'vertical-align: middle;'),
+      l(:label_version_new),
+      'version[name]',
+      {:controller => 'versions', :action => 'create', :project_id => @project},
+      :title => l(:label_version_new),
+      :tabindex => 200) if authorize_for('versions', 'new') %>
+  </p>
+  <p><%= f.select :pd_proportion, ((0..10).to_a.collect {|r| ["#{r*10} %", r*10] }), :required => true %></p>
+  <p><%= f.select :pd_iscomplete, (['否','是'].collect {|r| ["#{r}"] }), :required => true%></p>
+</div>

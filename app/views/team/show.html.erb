@@ -1,0 +1,7 @@
+<h2><%= l(:report_title_create_team) %></h2>
+<% labelled_tabular_form_for :team, @team,
+  :url => { :action => "show" },
+  :html => { :class => nil, :multipart => true, :id => "team-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= link_to l(:report_link_team_back) ,:controller=>'team',:action => 'index' %>
+<% end %>

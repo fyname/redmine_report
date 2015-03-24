@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  projdailyhead_id: 1
+  pd_module: MyString
+  pd_isnew: MyString
+  pd_start: 2012-08-20
+  pd_commitment: 2012-08-20
+  pd_actual: 2012-08-20
+  pd_delaytime: 1
+  pd_phase: MyText
+  pd_username: MyString
+  pd_version: MyString
+  pd_proportion: MyString
+two:
+  id: 2
+  projdailyhead_id: 1
+  pd_module: MyString
+  pd_isnew: MyString
+  pd_start: 2012-08-20
+  pd_commitment: 2012-08-20
+  pd_actual: 2012-08-20
+  pd_delaytime: 1
+  pd_phase: MyText
+  pd_username: MyString
+  pd_version: MyString
+  pd_proportion: MyString

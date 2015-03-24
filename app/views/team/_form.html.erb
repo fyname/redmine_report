@@ -1,0 +1,7 @@
+<div class="box tabular">
+  <p><%= f.text_field :name, :size => 30, :rows => 10, :required => true %></p>
+  <p><%= f.text_area :remark, :cols => 30, :rows => 10 %></p>
+  <p><%= f.select :competendid, @usernameids, :required => true  %></p>
+  <p><%= f.select :status, ({:'公司'=>1,:'总经办'=>2,:'部门经理'=>3,:'组长'=>4}.each {|c| [c[0],c[1]] }), :required => true%></p>
+
+</div>

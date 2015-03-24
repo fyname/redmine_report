@@ -1,0 +1,6 @@
+<% labelled_tabular_form_for :weeklydaily, @weeklydaily,
+  :url => { :action => "show" },
+  :html => { :class => nil, :multipart => true, :id => "weeklydaily-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= link_to l(:report_link_daily_back) ,:controller=>'report',:action => 'userindex' %>
+<% end %>

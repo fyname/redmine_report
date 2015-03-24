@@ -1,0 +1,153 @@
+<table>
+  <% if @projdailyheads.length !=0 %>
+    <% @projdailyheads.each do |projdailyhead| %>
+      <div id="projdailyhead">
+        <% if projdailyhead.pd_date.to_date.to_s == Date.today.to_s and User.current.id == projdailyhead.user_id %>
+          <tr>
+            <th>提交人</th>
+            <th>提交时间</th>
+            <th>项目名称</th>
+            <th>是否延期</th>
+            <th>困难帮助</th>
+            <th>建议</th>
+            <th>项目完成度%</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td class ="pd_username">
+              <div class="wiki">
+                <%= textilizable projdailyhead.user_name, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_date">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_date.to_s, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_name">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_name.to_s.split("|")[1], :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_isdelay">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_isdelay, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_help">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_help, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_risk">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_risk, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_totalproportion">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_totalproportion.to_s+"%", :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'projdailyhead', :action => 'show', :id => projdailyhead.id } %></td>
+          </tr>
+
+          <% if projdailyhead.projdailyschedules.length !=0 %>
+            <tr>
+              <th>功能点所处版本</th>
+              <th>截止当前未关闭问题</th>
+            </tr>
+            <% projdailyhead.projdailyschedules.each do |pds|%>
+              <tr>
+                <td class ="pd_version">
+                  <div class="wiki">
+                    <%= textilizable pds.pd_version.to_s.split("|")[1], :object => projdailyhead.projdailyschedules %>
+                  </div>
+                </td>
+                <td class ="pd_bugs">
+                  <div class="wiki">
+                    <%= textilizable pds.pd_bugs, :object => projdailyhead.projdailyschedules %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+
+        <% else %>
+          <tr>
+            <th>提交人</th>
+            <th>提交时间</th>
+            <th>项目名称</th>
+            <th>是否延期</th>
+            <th>困难帮助</th>
+            <th>建议</th>
+            <th>项目完成度%</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td class ="pd_username">
+              <div class="wiki">
+                <%= textilizable projdailyhead.user_name, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_date">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_date.to_s, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_name">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_name.to_s.split("|")[1], :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_isdelay">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_isdelay, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_help">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_help, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_risk">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_risk, :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="pd_totalproportion">
+              <div class="wiki">
+                <%= textilizable projdailyhead.pd_totalproportion.to_s+"%", :object => projdailyhead %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'projdailyhead', :action => 'show', :id => projdailyhead.id } %></td>
+          </tr>
+          
+          <% if projdailyhead.projdailyschedules.length !=0 %>
+            <tr>
+              <th>功能点所处版本</th>
+              <th>截止当前未关闭问题</th>
+            </tr>
+            <% projdailyhead.projdailyschedules.each do |pds|%>
+              <tr>
+                <td class ="pd_version">
+                  <div class="wiki">
+                    <%= textilizable pds.pd_version.to_s.split("|")[1], :object => projdailyhead.projdailyschedules %>
+                  </div>
+                </td>
+                <td class ="pd_bugs">
+                  <div class="wiki">
+                    <%= textilizable pds.pd_bugs, :object => projdailyhead.projdailyschedules %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+
+        <% end %>
+
+      </div>
+
+    <% end %>
+  <% end %>
+</table>

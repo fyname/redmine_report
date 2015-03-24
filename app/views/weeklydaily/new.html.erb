@@ -1,0 +1,7 @@
+<h2><%= l(:report_title_create_weekly) %></h2>
+<% labelled_tabular_form_for :weeklydaily, @weeklydaily, 
+  :url => { :action => "create" },
+  :html => { :class => nil, :multipart => true, :id => "weeklydaily-form" } do |form| %>
+  <%= render :partial => 'form', :locals => { :f => form } %>
+  <%= submit_tag l(:report_button_weekly_create) %>
+<% end %>

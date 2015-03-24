@@ -1,0 +1,10 @@
+<div class="box tabular">
+  <% if @teams != nil and @teams.length != 0 %>
+     <p><%= f.select :team_id, @teams.collect{|c|[ c.name, c.id.to_s]}, :required => true%></p>
+  <% end %>
+  <p><%= f.text_area :content, :cols => 100, :rows => 10, :required => true %></p>
+  <p><%= f.text_field :starttime, :size => 6,:disabled =>false , :required => true%><%= calendar_for('mbo_starttime') %></p>
+  <p><%= f.text_field :endtime, :size => 6,:disabled =>false , :required => true%><%= calendar_for('mbo_endtime') %></p>
+  <p><%= f.select :iscomplete, ({:'否'=>0,:'是'=>1}.each {|c| [c[0],c[1]] }), :required => true%></p>
+  <p><%= f.text_area :remark, :cols =>100, :rows => 6 %></p>
+</div>

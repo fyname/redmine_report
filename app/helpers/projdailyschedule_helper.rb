@@ -1,0 +1,2 @@
+module ProjdailyscheduleHelper
+end

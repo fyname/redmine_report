@@ -1,0 +1,156 @@
+
+<table>
+
+  <% if @userdailes !=nil %>
+    <tr>
+      <th>部门</th>
+      <th>提交人</th>
+      <th>提交时间</th>
+      <th>工作内容</th>
+      <th>困难帮助</th>
+      <th>明天计划</th>
+      <th>建议</th>
+      <th>操作</th>
+    </tr>
+    <% @userdailes.each do |userdaily| %>
+      <div id="userdaily">
+        <% if userdaily.created_at.to_date.to_s == Date.today.to_s %>
+
+          <tr>
+            <td class ="d_dept">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_deptname, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_name">
+              <div class="wiki">
+                <%= textilizable userdaily.user_name, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_weekly">
+              <div class="wiki">
+                <%= textilizable userdaily.create_weekly, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_work">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_work, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_probles">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_probles, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_plan">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_plan, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_proposal">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_proposal, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'userdaily', :action => 'show', :id => userdaily.id } %>|<%= link_to"回复", { :controller => 'reply', :action => 'new',:id =>userdaily.id} %></td>
+          </tr>
+
+          <% if userdaily.replies.length !=0  %>
+            <tr>
+              <th>回复人</th>
+              <th>回复内容</th>
+              <th>回复时间</th>
+            </tr>
+            <tr>
+              <% userdaily.replies.each do |rp| %>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.user_name, :object => userdaily.replies %>
+                  </div>
+                </td>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.u_replycontent, :object => userdaily.replies %>
+                  </div>
+                </td>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.u_replytime, :object => userdaily.replies %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+
+        <% else %>
+          <tr>
+            <td class ="d_dept">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_deptname, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_name">
+              <div class="wiki">
+                <%= textilizable userdaily.user_name, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_weekly">
+              <div class="wiki">
+                <%= textilizable userdaily.create_weekly, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_work">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_work, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_probles">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_probles, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_plan">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_plan, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_proposal">
+              <div class="wiki">
+                <%= textilizable userdaily.ud_proposal, :object => @userdailes %>
+              </div>
+            </td>
+            <td class ="d_zc"><%= link_to"查看", { :controller => 'userdaily', :action => 'show', :id => userdaily.id } %>|<%= link_to"回复", { :controller => 'reply', :action => 'new',:id =>userdaily.id} %></td>
+          </tr>
+          <% if userdaily.replies.length !=0  %>
+            <tr>
+              <th>回复人</th>
+              <th>回复内容</th>
+              <th>回复时间</th>
+            </tr>
+            <tr>
+              <% userdaily.replies.each do |rp| %>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.user_name, :object => userdaily.replies %>
+                  </div>
+                </td>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.u_replycontent, :object => userdaily.replies %>
+                  </div>
+                </td>
+                <td class ="d_proposal">
+                  <div class="wiki">
+                    <%= textilizable rp.u_replytime, :object => userdaily.replies %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+
+        <% end %>
+      </div>
+
+    <% end %>
+  <% end %>
+</table>

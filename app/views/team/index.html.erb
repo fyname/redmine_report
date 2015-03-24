@@ -1,0 +1,26 @@
+<h2><%=l(:report_label_user_team)%></h2>
+
+<div class="contextual">
+<%= link_to l(:report_title_create_team), { :controller=>'team',:action => 'new'}, :class => 'icon icon-add' %>
+</div>
+
+<h2><%= l(:field_team) %></h2>
+
+<% if @teams !=nil %>
+<table class="list groups">
+  <thead><tr>
+  <th><%=l(:field_team)%></th>
+  <th><%=l(:label_user_plural)%></th>
+  <th></th>
+  </tr></thead>
+<% @teams.each do |team| %>
+  <tr class="<%= cycle 'odd', 'even' %>">
+    <td><%= link_to h(team.name),{ :controller=>'team', :action => 'edit', :id => team} %></td>
+    <td align="center"><%= team.users.size %></td>
+    <td class="buttons"><%= link_to l(:button_delete), { :controller=>'team',:action => 'destroy', :id => team},:confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

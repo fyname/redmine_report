@@ -1,0 +1,82 @@
+<% form_tag 'search' do -%>
+  <fieldset>
+    <table class="search_t">
+      <tr>
+        <td>日报搜索</td>
+        <td><p><%= label_tag "m_create_at_start", l(:label_s_start) %><%= text_field_tag 'mbo_m_create_at_start' %><%= calendar_for('mbo_m_create_at_start') %></p></td>
+        <td><p><%= label_tag "m_create_at_end", l(:label_s_end) %><%= text_field_tag 'mbo_m_create_at_end' %><%= calendar_for('mbo_m_create_at_end') %></p></td>
+        <td><p><%= submit_tag l(:date_search) %></p></td>
+      </tr>
+    </table>
+  </fieldset>
+
+<% end -%>
+
+<table>
+
+  <% if @team != nil %>
+    <tr>
+      <th>目标所属部门</th>
+      <th>目标所属用户</th>
+      <th>目标内容</th>
+      <th>目标开始时间</th>
+      <th>目标结束时间</th>
+      <th>目标是否完成</th>
+      <th>备注</th>
+      <th>操作</th>
+    </tr>
+    <% @team.users.each do |user| %>
+      <div id="mbo">
+        <tr>
+        <div class="wiki">
+          <% user.mbos.find(:all,:conditions => ["created_at >= ? and created_at <= ?", @starttime, @endtime]).each do |mbo| %>
+
+            <%# if mbo != nil %>
+              <tr>
+                <td class ="depname">
+                  <div class="wiki">
+                    <%= @team.name  %>
+                  </div>
+                </td>
+                <td class ="musername">
+                  <div class="wiki">
+                    <%= user.firstname  %>
+                  </div>
+                </td>
+                <td class ="content">
+                  <div class="wiki">
+                    <%= mbo.content  %>
+                  </div>
+                </td>
+                <td class ="starttime">
+                  <div class="wiki">
+                    <%= mbo.starttime.to_date.to_s %>
+                  </div>
+                </td>
+                <td class ="endtime">
+                  <div class="wiki">
+                    <%= mbo.endtime.to_date.to_s %>
+                  </div>
+                </td>
+                <td class ="iscomplete">
+                  <div class="wiki">
+                    <%= mbo.iscomplete.to_s %>
+                  </div>
+                </td>
+                <td class ="remark">
+                  <div class="wiki">
+                    <%=  mbo.remark %>
+                  </div>
+                </td>
+                <td class ="d_zc"><%= link_to"查看", { :controller => 'mbo', :action => 'show', :id => mbo.id } %></td>
+              </tr>
+            <%# end %>
+          <% end %>
+        </div>
+
+        </tr>
+      </div>
+
+    <% end %>
+  <% end %>
+</table>

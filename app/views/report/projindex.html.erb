@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'report', :plugin => 'redmine_reports' %>
+
+<h2><%=l(:report_label_my_projreport)%></h2>
+
+<% if @projdailyheads.length == 0 %>
+  <p>
+    <%= link_to l(:report_title_create_project) ,:controller=>'projdailyhead',:action => 'new' %>
+  </p>
+  <div class ="nodata"><%=l(:report_message_no_prodailes)%></div>
+
+<% else %>
+  <p>
+    <%= link_to l(:report_title_create_project) ,:controller=>'projdailyhead',:action => 'new' %>
+  </p>
+  <%= l(:report_field_tag_pro_daily_list) %>
+  <div id="list-zb" class="">
+    <%= render :partial => 'projdailyhead/list'%>
+  </div>
+<% end %>
+<% html_title(l(:report_label_my_projreport)) -%>
+

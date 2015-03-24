@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  user_id: 1
+  wd_work: MyText
+  wd_probles: MyText
+  wd_plan: MyText
+  wd_proposal: MyText
+two:
+  id: 2
+  user_id: 1
+  wd_work: MyText
+  wd_probles: MyText
+  wd_plan: MyText
+  wd_proposal: MyText

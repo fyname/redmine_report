@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  departmentid: 1
+  ownerid: 1
+  createuserid: 1
+  updateuserid: 1
+  content: MyText
+  starttime: 2012-12-17 17:25:04
+  endtime: 2012-12-17 17:25:04
+  iscomplete: false
+  remark: MyText
+two:
+  id: 2
+  departmentid: 1
+  ownerid: 1
+  createuserid: 1
+  updateuserid: 1
+  content: MyText
+  starttime: 2012-12-17 17:25:04
+  endtime: 2012-12-17 17:25:04
+  iscomplete: false
+  remark: MyText

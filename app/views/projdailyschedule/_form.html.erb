@@ -1,0 +1,5 @@
+<%= error_messages_for 'projdailyschedule' %>
+<div class="box tabular">
+  <p><%= f.select :pd_bugs, User.current.projects.all.collect{|c|[ c.name, c.id.to_s+"|"+c.name.to_s ]}.unshift(["请选择项目", 0]), :required => true%></p>
+  <p><%= f.select :pd_version, (@versions.collect {|v| [v.name, v.id.to_s+"|"+v.name]}.unshift(["请选择项目版本", 0])), :include_blank => true %></p>
+</div>

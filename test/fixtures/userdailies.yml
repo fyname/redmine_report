@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  user_id: 1
+  ud_work: MyText
+  ud_probles: MyText
+  ud_plan: MyText
+  ud_proposal: MyText
+two:
+  id: 2
+  user_id: 1
+  ud_work: MyText
+  ud_probles: MyText
+  ud_plan: MyText
+  ud_proposal: MyText

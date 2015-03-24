@@ -1,0 +1,47 @@
+<table>
+  <% if @mbos !=0 %>
+    <tr>
+      <th>目标内容</th>
+      <th>目标开始时间</th>
+      <th>目标结束时间</th>
+      <th>目标是否完成</th>
+      <th>备注</th>
+      <th>操作</th>
+    </tr>
+    <% @mbos.each do |mbo| %>
+      <div id="mbo">
+        <tr>
+          <td class ="content">
+            <div class="wiki">
+              <%= textilizable mbo.content, :object => mbo %>
+            </div>
+          </td>
+          <td class ="starttime">
+            <div class="wiki">
+              <%= textilizable mbo.starttime.to_date.to_s, :object => mbo %>
+            </div>
+          </td>
+          <td class ="endtime">
+            <div class="wiki">
+              <%= textilizable mbo.endtime.to_date.to_s, :object => mbo %>
+            </div>
+          </td>
+          <td class ="iscomplete">
+            <div class="wiki">
+              <%= textilizable mbo.iscomplete.to_s, :object => mbo %>
+            </div>
+          </td>
+          <td class ="remark">
+            <div class="wiki">
+              <%= textilizable mbo.remark, :object => mbo %>
+            </div>
+          </td>
+          <td class ="d_zc"><%= link_to"查看", { :controller => 'mbo', :action => 'show', :id => mbo.id } %> | <%= link_to"编辑",{ :controller => 'mbo',:action => 'edit', :id => mbo.id } %></td>
+        </tr>
+      </div>
+
+    <% end %>
+  <% else %>
+    <div class ="nodata"><%=l(:message_no_mbos)%></div>
+  <% end %>
+</table>

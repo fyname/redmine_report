@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag 'report', :plugin => 'redmine_reports' %>
+
+
+<% if @userdailes ==nil or @userdailes.length == 0 %>
+  <div class ="nodata"><%=l(:report_message_no_userdailes)%></div>
+
+<% else %>
+  <h2><%=l(:report_field_tag_user_daily_list)%></h2>
+  
+  <% if  User.current.id.to_s ==  @tmi.to_s %>
+  <p><%= link_to l(:report_link_back) ,:controller=>'userdaily',:action => 'index' %></p>
+    <div id="list-zb" class="">
+      <%= render :partial => 'userdaily/mlist'%>
+    </div>
+
+  <% else %>
+   <p><%= link_to l(:report_link_back) ,:controller=>'userdaily',:action => 'index' %></p>
+    <div id="list-zb" class="">
+      <%= render :partial => 'userdaily/list'%>
+    </div>
+   
+  <% end %>
+<% end %>
+
+
+
+
+
+<% if @weeklydailes ==nil or @weeklydailes.length == 0 %>
+  <div class ="nodata"><%=l(:report_message_no_weeklydailes)%></div>
+
+<% else %>
+  <h2><%=l(:report_field_tag_user_weekly_list)%></h2>
+  <% if  User.current.id.to_s == @tmi.to_s %>
+    <div id="list-zb" class="">
+      <%= render :partial => 'weeklydaily/mlist'%>
+    </div>
+  <p><%= link_to l(:report_link_back) ,:controller=>'weeklydaily',:action => 'index' %></p>
+  <% else %>
+    <div id="list-zb" class="">
+      <%= render :partial => 'weeklydaily/list'%>
+    </div>
+  <% end %>
+  <p><%= link_to l(:report_link_back) ,:controller=>'weeklydaily',:action => 'index' %></p>
+<% end %>

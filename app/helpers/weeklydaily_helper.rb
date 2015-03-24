@@ -1,0 +1,2 @@
+module WeeklydailyHelper
+end
